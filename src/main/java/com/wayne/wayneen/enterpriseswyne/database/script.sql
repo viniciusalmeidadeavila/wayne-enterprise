@@ -427,3 +427,20 @@ CREATE TABLE IF NOT EXISTS `wayne_db`.`processos_seletivos` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `wayne_db`.`curriculos` (
+	`id` INT(11) NOT NULL auto_increment,
+    `nome` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `telefone` VARCHAR(255) NOT NULL,
+    `cargoDesejado` VARCHAR(255) NOT NULL,
+    `skills` VARCHAR(255) NOT NULL,
+    `experiencia` VARCHAR(255) NOT NULL,
+    `escolaridade` VARCHAR(255) NOT NULL,
+    `linkedin` VARCHAR(255) NOT NULL,
+    `statusProcesso` ENUM("NOVO", "EM_ANALISE", "ENTREVISTA", "APROVADO", "REPROVADO", "RESERVA") NOT NULL,
+    `caminhoPdf` VARCHAR(255) NOT NULL,
+    `dataCadastro` date NOT NULL,
+    PRIMARY KEY (`id`))
+    ENGINE = InnoDB
+	DEFAULT CHARACTER SET = utf8mb4;
