@@ -11,13 +11,12 @@ import java.util.List;
 public class CurriculoDAO {
 
     public void inserir(Curriculo c) throws SQLException {
-        String sql = "INSERT INTO curriculos (nome, email, telefone, cargo_desejado, skills, experiencia, escolaridade, linkedin, status_processo, caminho_pdf, data_cadastro) " +
+        String sql = "INSERT INTO curriculos (nome, email, telefone, cargoDesejado, skills, experiencia, escolaridade, linkedin, statusProcesso, caminhoPdf, dataCadastro) " +
                 "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         try (Connection conn = ConnectionFactory.getConexao();
              PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, c.getNome());
-            ps.setString(2, c.getEmail());
-            ps.setString(3, c.getTelefone());
+            ps.setString(2, c.getEmail());            ps.setString(3, c.getTelefone());
             ps.setString(4, c.getCargoDesejado());
             ps.setString(5, c.getSkills());
             ps.setString(6, c.getExperiencia());

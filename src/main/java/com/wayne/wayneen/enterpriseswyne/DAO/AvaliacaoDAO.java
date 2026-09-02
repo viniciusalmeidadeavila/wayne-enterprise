@@ -62,7 +62,7 @@ public class AvaliacaoDAO {
     }
 
     public static void salvar(Avaliacao a) {
-        String sql = "INSERT INTO avaliacoes (funcionario_id, data_avaliacao, pontualidade, produtividade, trabalho_equipe, observacoes) " +
+        String sql = "INSERT INTO avaliacoes (funcionario_id, data_avaliacao, pontualidade, produtividade, trabalho_em_equipe, observacoes) " +
                 "VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = ConnectionFactory.getConnection();

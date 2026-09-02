@@ -27,11 +27,14 @@ public class AvisoDAO {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                Aviso aviso = new Aviso(rs.getInt("id"), rs.getString("titulo"), rs.getString("descricao"), rs.getDate("data").toLocalDate(), rs.getString("tipo"));
+                Aviso aviso = new Aviso();
                 aviso.setId(rs.getInt("id"));
                 aviso.setTitulo(rs.getString("titulo"));
                 aviso.setDescricao(rs.getString("descricao"));
-                aviso.setData(rs.getDate("data").toLocalDate());
+                Date dataSql = rs.getDate("data");
+                if (dataSql != null) {
+                    aviso.setData(dataSql.toLocalDate());
+                }
                 aviso.setTipo(rs.getString("tipo"));
                 avisos.add(aviso);
             }

@@ -7,9 +7,17 @@ public class Aviso {
     private String titulo;
     private String descricao;
     private LocalDate data;
-    private String tipo; // Aniversário, Férias, Comunicado
+    private String  tipo; // Aniversário, Férias, Comunicado
 
-    public Aviso(int id, String titulo, String descricao, LocalDate data, String tipo) {}
+    public Aviso(int id, String titulo, String descricao, LocalDate data, String tipo) {
+        this.id = id;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.data = data;
+        this.tipo = tipo;
+    }
+
+    public Aviso(){}
 
     public Aviso(String titulo, String descricao, LocalDate data, String tipo) {
         this.titulo = titulo;
